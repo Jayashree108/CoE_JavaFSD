@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Raleway:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><img src="logo.png" alt="EduLearn Logo" class="logo"> EduLearn</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="instructors.html">Instructors</a></li>
+                <li><a href="enroll.html">Enroll</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="about">
+        <div class="about-container">
+            <img src="bg.png" alt="About Us" class="about-image">
+            <div class="about-text">
+                <h2>About Us</h2>
+                <p>EduLearn is a premier online learning platform that provides high-quality courses in Web Development, Data Science, and Machine Learning. Our mission is to bridge the gap between learners and industry experts, offering interactive and engaging educational content.</p>
+                <p>With expert instructors and hands-on projects, we ensure that every learner gains practical experience and deep knowledge in their chosen domain.</p>
+            </div>
+        </div>
+    </section>
+    <section id="courses">
+        <h2>Available Courses</h2>
+        <div class="search-filter">
+            <input type="text" id="search-bar" placeholder="Search courses...">
+            <div class="filters">
+                <label>Price Range:
+                    <select id="price-filter">
+                        <option value="all">All</option>
+                        <option value="0-50">$0 - $50</option>
+                        <option value="51-100">$51 - $100</option>
+                        <option value="101-200">$101 - $200</option>
+                    </select>
+                </label>
+                <label>Duration:
+                    <select id="duration-filter">
+                        <option value="all">All</option>
+                        <option value="short">Short (0-3 months)</option>
+                        <option value="medium">Medium (3-6 months)</option>
+                        <option value="long">Long (6+ months)</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+        <div class="courses-grid">
+            <div class="course-card" data-price="50" data-duration="short">
+                <img src="wd.png" alt="Web Development" class="course-image">
+                <h3>Web Development</h3>
+                <p>Learn HTML, CSS, JavaScript, and modern frameworks.</p>
+                <ul>
+                    <li>Introduction to HTML and CSS</li>
+                    <li>JavaScript Basics</li>
+                    <li>Responsive Design</li>
+                    <li>Modern JavaScript Frameworks (React, Angular, Vue)</li>
+                </ul>
+            </div>
+            <div class="course-card" data-price="150" data-duration="medium">
+                <img src="ds.png" alt="Data Science" class="course-image">
+                <h3>Data Science</h3>
+                <p>Master Python, Machine Learning, and Big Data.</p>
+                <ul>
+                    <li>Python Programming</li>
+                    <li>Data Analysis with Pandas</li>
+                    <li>Machine Learning Algorithms</li>
+                    <li>Big Data Technologies (Hadoop, Spark)</li>
+                </ul>
+            </div>
+            <div class="course-card" data-price="200" data-duration="long">
+                <img src="ml.png" alt="Machine Learning" class="course-image">
+                <h3>Machine Learning</h3>
+                <p>Build AI models with neural networks and deep learning.</p>
+                <ul>
+                    <li>Introduction to Machine Learning</li>
+                    <li>Neural Networks and Deep Learning</li>
+                    <li>Natural Language Processing</li>
+                    <li>Computer Vision</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="contact">
+                <h3>Contact Us</h3>
+                <p>Email: support@edulearn.com</p>
+                <p>Phone: +1 234 567 890</p>
+                <p>Address: 123 Learning St, Knowledge City, 45678</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('search-bar').addEventListener('input', function() {
+            let searchQuery = this.value.toLowerCase();
+            let courses = document.querySelectorAll('.course-card');
+            courses.forEach(course => {
+                let courseTitle = course.querySelector('h3').textContent.toLowerCase();
+                if (courseTitle.includes(searchQuery)) {
+                    course.style.display = 'block';
+                } else {
+                    course.style.display = 'none';
+                }
+            });
+        });
+
+        document.getElementById('price-filter').addEventListener('change', function() {
+            filterCourses();
+        });
+
+        document.getElementById('duration-filter').addEventListener('change', function() {
+            filterCourses();
+        });
+
+        function filterCourses() {
+            let priceFilter = document.getElementById('price-filter').value;
+            let durationFilter = document.getElementById('duration-filter').value;
+            let courses = document.querySelectorAll('.course-card');
+
+            courses.forEach(course => {
+                let coursePrice = parseInt(course.getAttribute('data-price'));
+                let courseDuration = course.getAttribute('data-duration');
+
+                let priceMatch = (priceFilter === 'all') || 
+                                 (priceFilter === '0-50' && coursePrice <= 50) ||
+                                 (priceFilter === '51-100' && coursePrice > 50 && coursePrice <= 100) ||
+                                 (priceFilter === '101-200' && coursePrice > 100 && coursePrice <= 200);
+
+                let durationMatch = (durationFilter === 'all') || 
+                                    (durationFilter === 'short' && courseDuration === 'short') ||
+                                    (durationFilter === 'medium' && courseDuration === 'medium') ||
+                                    (durationFilter === 'long' && courseDuration === 'long');
+
+                if (priceMatch && durationMatch) {
+                    course.style.display = 'block';
+                } else {
+                    course.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
