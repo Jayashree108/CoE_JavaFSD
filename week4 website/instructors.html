@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructors</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><img src="logo.png" alt="EduLearn Logo" class="logo"> EduLearn</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="instructors.html">Instructors</a></li>
+                <li><a href="enroll.html">Enroll</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="instructors">
+        <h2>Meet Our Instructors</h2>
+        <div class="instructor-grid">
+            <div class="instructor-card">
+                <img src="profilepic.png" alt="John Doe" class="profile-pic">
+                <h3>John Doe</h3>
+                <p><strong>Age:</strong> 40</p>
+                <p><strong>Experience:</strong> 15 years</p>
+                <p><strong>Domain:</strong> Web Development</p>
+                <p><strong>Biography:</strong> John has been a web developer for over 15 years, specializing in front-end technologies and user experience design.</p>
+                <p><strong>Courses:</strong> HTML & CSS, JavaScript, React</p>
+                <p><strong>Rating:</strong> ⭐⭐⭐⭐☆ (4.5/5)</p>
+            </div>
+            <div class="instructor-card">
+                <img src="profilepic.png" alt="Jane Smith" class="profile-pic">
+                <h3>Jane Smith</h3>
+                <p><strong>Age:</strong> 35</p>
+                <p><strong>Experience:</strong> 12 years</p>
+                <p><strong>Domain:</strong> Data Science</p>
+                <p><strong>Biography:</strong> Jane is a data scientist with a passion for teaching and has been in the field for over a decade.</p>
+                <p><strong>Courses:</strong> Python for Data Science, Machine Learning, Data Visualization</p>
+                <p><strong>Rating:</strong> ⭐⭐⭐⭐⭐ (5/5)</p>
+            </div>
+            <div class="instructor-card">
+                <img src="profilepic.png" alt="Michael Lee" class="profile-pic">
+                <h3>Michael Lee</h3>
+                <p><strong>Age:</strong> 38</p>
+                <p><strong>Experience:</strong> 14 years</p>
+                <p><strong>Domain:</strong> AI and Machine Learning</p>
+                <p><strong>Biography:</strong> Michael is an AI expert with extensive experience in machine learning and neural networks.</p>
+                <p><strong>Courses:</strong> Introduction to AI, Deep Learning, Natural Language Processing</p>
+                <p><strong>Rating:</strong> ⭐⭐⭐⭐☆ (4.7/5)</p>
+            </div>
+        </div>
+    </section>
+    <style>
+        .instructor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+        .instructor-card {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+        .instructor-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .instructor-card {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease-in-out forwards;
+        }
+        .instructor-card:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+        .instructor-card:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+        .instructor-card:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</body>
+</html>

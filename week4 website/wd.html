@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Course</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+       body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #b7094c, #0091ad);
+    color: #2e6f95;
+    text-align: center;
+}
+
+header {
+    background: #b7094c;
+    padding: 1rem;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+nav ul li {
+    display: inline;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+.container {
+    display: grid;
+    grid-template-rows: auto;
+    gap: 20px;
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+}
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #b7094c;
+    color: #fff;
+    margin-top: 20px;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><img src="logo.png" alt="EduLearn Logo" class="logo"> EduLearn</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="instructors.html">Instructors</a></li>
+                <li><a href="enroll.html">Enroll</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <section class="card">
+            <h2>Web Development Course</h2>
+            <p><strong>Duration:</strong> 12 weeks</p>
+            <p><strong>Instructor:</strong> John Doe</p>
+            <p><strong>Price:</strong> $499</p>
+            <p><strong>Overall Rating:</strong> ⭐⭐⭐⭐☆ (4.5/5)</p>
+            <p>Welcome to the Web Development Course! This course is designed to teach you the fundamentals of web development, including HTML, CSS, JavaScript, and more.</p>
+        </section>
+        
+        <section class="card">
+            <h3>Course Syllabus</h3>
+            <ul>
+                <li>Introduction to HTML</li>
+                <li>Styling with CSS</li>
+                <li>JavaScript Basics</li>
+                <li>Advanced JavaScript</li>
+                <li>Responsive Web Design</li>
+                <li>Web Development Tools</li>
+                <li>Project: Build a Complete Website</li>
+            </ul>
+        </section>
+        
+        <section class="card">
+            <h3>User Reviews</h3>
+            <p><em>"This course was amazing! I learned so much and feel confident in my web development skills now." - Jane Smith</em> ⭐⭐⭐⭐⭐ (5/5)</p>
+            <p><em>"Great course with hands-on projects that really helped me understand the concepts." - Mark Johnson</em> ⭐⭐⭐⭐☆ (4/5)</p>
+            <p><em>"Well-structured course with excellent explanations. Highly recommend!" - Sarah Lee</em> ⭐⭐⭐⭐⭐ (5/5)</p>
+            <p><em>"The instructor explained everything clearly, and the projects were very helpful." - Daniel Kim</em> ⭐⭐⭐⭐☆ (4/5)</p>
+            <p><em>"Good balance between theory and practice. Helped me land my first web dev job!" - Emily Clark</em> ⭐⭐⭐⭐⭐ (5/5)</p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Web Development Course. All rights reserved.</p>
+    </footer>
+</body>
+</html>

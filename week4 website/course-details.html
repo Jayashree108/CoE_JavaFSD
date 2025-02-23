@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll Now</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>EduLearn</h1>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="instructors.html">Instructors</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="enroll">
+        <h2>Enroll Now</h2>
+        <form id="enroll-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="course">Select Course:</label>
+            <select id="course" required>
+                <option value="Web Development">Web Development</option>
+                <option value="Data Science">Data Science</option>
+                <option value="Machine Learning">Machine Learning</option>
+            </select>
+            <button type="submit">Enroll</button>
+        </form>
+    </section>
+    <script>
+        document.getElementById("enroll-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const courseName = document.getElementById("course").value;
+            alert("Enrollment Successful! You have been enrolled in " + courseName);
+            window.location.href = "course-details.html?course=" + courseName;
+        });
+    </script>
+</body>
+</html>
