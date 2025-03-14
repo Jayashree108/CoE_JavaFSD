@@ -1,0 +1,85 @@
+.cmp-header {
+    position: sticky; /* Makes the header sticky */
+    top: 0; /* Sticks the header to the top of the viewport */
+    z-index: 1000; /* Ensures the header stays above other content */
+    background-color: rgba(159, 207, 255, 0.8); /* Transparent background */
+    color: #fff;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow for better visibility */
+    backdrop-filter: blur(10px); /* Optional: adds a blur effect to the background */
+    transition: background-color 0.3s ease, padding 0.3s ease; /* Smooth transition effects */
+    
+    /* When scrolling, change the background to a solid color */
+    &.scrolled {
+        background-color: rgba(159, 207, 255, 1); /* Solid color after scroll */
+        padding: 8px 20px; /* Optional: reduce padding after scroll for a more compact header */
+    }
+
+    /* Container for the logo */
+    .cmp-header__logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px; /* Optional: to provide some space between the logo and the navigation */
+        
+        .cmp-header__logo-image {
+            width: 100px; /* Set logo size */
+            height: auto;
+            object-fit: contain; /* Ensure the logo scales properly without distortion */
+        }
+    }
+
+    /* Navigation styling */
+    &__nav {
+        display: flex;
+        justify-content: center; /* Center the nav items */
+        gap: 20px;
+        align-items: center;
+        margin: 0;
+
+        /* Navigation items styling */
+        &-item {
+            list-style: none;
+            
+            a {
+                color: #fff;
+                text-decoration: none;
+                font-size: 16px;
+                padding: 8px 15px;
+                transition: color 0.3s ease, transform 0.3s ease;
+                
+                &:hover {
+                    color: #333; /* Change text color on hover */
+                    text-decoration: underline;
+                    transform: scale(1.05); /* Slightly scale the item on hover */
+                }
+            }
+        }
+
+        /* Active item styling */
+        &-item--active a {
+            font-weight: bold;
+            border-bottom: 2px solid #fff; /* Underline active items */
+        }
+    }
+}
+
+/* Optional: Add media queries to make the header responsive */
+@media (max-width: 768px) {
+    .cmp-header {
+        padding: 8px 15px; /* Smaller padding on mobile */
+    }
+
+    .cmp-header__nav {
+        flex-direction: column; /* Stack items vertically on small screens */
+        gap: 10px;
+    }
+
+    .cmp-header__logo {
+        margin-right: 0; /* Remove the margin for smaller screens */
+    }
+
+    .cmp-header__logo-image {
+        width: 80px; /* Resize logo for mobile */
+    }
+}
