@@ -1,0 +1,60 @@
+.cmp-footer {
+    background-color: #00264d;
+    color: #ccc;
+    padding: 15px;
+    text-align: center;
+    border-top: 2px solid #004080; /* Adding a subtle top border */
+    font-family: Arial, sans-serif; /* Choose a modern font */
+    position: relative; /* For positioning any child elements like icons or links */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Adding a subtle shadow for depth */
+    z-index: 10; /* Ensure footer stays above other content */
+}
+
+.cmp-footer__text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6; /* Improve text readability */
+}
+
+.cmp-footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 8px;
+    transition: color 0.3s ease;
+}
+
+.cmp-footer a:hover {
+    color: #ffcc00; /* Gold color on hover */
+    text-decoration: underline; /* Underline effect on hover */
+}
+
+.cmp-footer__social-icons {
+    margin-top: 10px;
+}
+
+.cmp-footer__social-icons i {
+    font-size: 18px;
+    color: #ccc;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.cmp-footer__social-icons i:hover {
+    color: #ffcc00; /* Change icon color on hover */
+}
+
+@media (max-width: 768px) {
+    .cmp-footer {
+        padding: 10px; /* Reduce padding on smaller screens */
+    }
+
+    .cmp-footer__text {
+        font-size: 12px; /* Smaller text size for mobile */
+    }
+
+    .cmp-footer__social-icons i {
+        font-size: 16px; /* Smaller icon size on mobile */
+    }
+}
+
